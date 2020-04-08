@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
 
+    // const onSubmit = () => {
+    //     console.log("SUBMIT")
+    // }
+
     const onFinish = values => {
         console.log('Received values of form: ', values);
     }
@@ -65,7 +69,10 @@ const LoginPage = () => {
                             </Form.Item>
                             <br />
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" className="login-form-button">
+                                <Button type="primary" 
+                                        htmlType="submit" 
+                                        className="login-form-button" 
+                                >
                                     <Link to="/home">Log in</Link>
                                 </Button>
                             </Form.Item>
@@ -112,7 +119,7 @@ const StyledWrpper = styled.div`
             transform: translate(-50%, -50%);
             color: black;
             text-shadow: 5px 5px 10px black;
-            font-size: 50px;
+            font-size: 40px;
             font-weight: 900;
         }
     }
