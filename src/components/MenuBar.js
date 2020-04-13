@@ -14,13 +14,6 @@ const MenuBar = () => {
                 <div className="user-info">
                     <p>ADMIN</p>
                 </div>
-                <div className="button">
-                    <Link to="profile">
-                        <Button>
-                            <p>PROFILE</p>
-                        </Button>
-                    </Link>
-                </div>
             </div>
             <Divider style={{margin: 0}}/>
             <div className="menu">
@@ -75,24 +68,15 @@ const StyledWrapper =  styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
 
         .avatar {
             padding-top: 15px;
         }
 
         .user-info {
+            padding-top: 30px;
             font-weight: 900;
         }
-
-        .button {
-            padding-bottom: 15px;
-
-            p {
-                font-weight: 900;
-            }
-        }
-
     }
 
     .menu {
@@ -109,7 +93,7 @@ const StyledWrapper =  styled.div`
                 align-items: center;
                 height: 5vh;
                 color: black;
-                padding-left: 20px;
+                padding-left: 30px;
 
                 span {
                     padding-left: 10px;
@@ -128,7 +112,7 @@ const StyledWrapper =  styled.div`
                 align-items: center;
                 height: 5vh;
                 color: black;
-                padding-left: 20px;
+                padding-left: 30px;
 
                 span {
                     padding-left: 10px;
@@ -147,7 +131,7 @@ const StyledWrapper =  styled.div`
                 align-items: center;
                 height: 5vh;
                 color: black;
-                padding-left: 20px;
+                padding-left: 30px;
 
                 span {
                     padding-left: 10px;
@@ -175,7 +159,7 @@ const StyledWrapper =  styled.div`
                 align-items: center;
                 height: 5vh;
                 color: black;
-                padding-left: 20px;
+                padding-left: 30px;
 
                 span {
                     padding-left: 10px;

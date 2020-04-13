@@ -1,8 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Home from "./pages/็็็Home"
-import Login from './pages/Login';
-import MainLayout from './components/Layout/MainLayout'
+import Home from "./pages/็็็home"
+import Login from "./pages/login"
 
 const App = () => {
   return (

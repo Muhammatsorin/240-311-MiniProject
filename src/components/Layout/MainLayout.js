@@ -41,11 +41,7 @@ const StyledWrapper = styled.div`
             overflow-y: auto;
             background: rgb(245,245,245);
         }
-
-
     }
-
-
 `
 
 export default MainLayout ;
