@@ -6,42 +6,9 @@ import { Link } from "react-router-dom";
 import { Firebaes } from "../index"
 
 const TopBar = () => {
-
-    const handleClick = () => {
-        console.log("come to home page")
-    }
-
-    const Logout = () => {
-        Firebaes.signOut()
-    }
-
-    const hancleClickUserAcc = (
-        <PopoverStyled>
-            <div className="popover-list">
-                <div className="account">
-                    <Link to="/account">
-                        <p>Account</p>
-                    </Link>
-                </div>
-                <div className="logout">
-                    <Link to="/">
-                        <p onClick={Logout}>Log out</p>
-                    </Link>
-                </div>
-            </div>
-        </PopoverStyled>
-    )
-
     return (
         <StyledWrapper>
-            <div className="text">
-                <p onClick={handleClick}>PaiHaiSud</p>
-            </div>
-            <div className="user-account">
-                <Popover content={hancleClickUserAcc} trigger="click">
-                    <p>sorin@gmail.com</p>
-                </Popover>
-            </div>
+            <p>Try changing the atmosphere to see the outside world. New things are waiting for us</p>
         </StyledWrapper>
     )
 }
@@ -49,83 +16,19 @@ const TopBar = () => {
 const StyledWrapper = styled.div`
     margin: 0;
     height: 10vh;
+    background: #ff5f6d; 
+    background: -webkit-linear-gradient(to right, #ff5f6d, #ffc371); 
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background: rgb(255,69,0);
 
-    .user-account {
-        text-align: center;
-        width: 20vw;
-
-        Popover {
-            width: 20vw;
-        }
-        
-        p {
-            color: white;
-            margin: 0px;
-            font-size: 20px;
-            font-weight: 900;
-            cursor: pointer;
-        }
-    }
-
-    .text {
-        display: flex;
-        align-items: center;
-        
-        p {
-            color: white;
-            margin: 0;
-            font-family: 'Charm';
-            font-size: 40px;
-            font-weight: 900;
-            padding-left: 80px;
-            cursor: pointer;
-        }
-    }
-`
-
-const PopoverStyled = styled.div`
-    .popover-list {
-        
-        .account {
-            width: 10vw;
-            text-align: center;
-
-            p {
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(139,69,19);
-            }
-
-            p:hover {
-                color: rgb(139,69,19);
-                font-size: 18px;
-                font-weight: 700;
-                text-shadow:5px 5px 10px rgb(139,69,19);
-            }
-        }
-
-        .logout {
-            width: 10vw;
-            text-align: center;
-            
-            p {
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(139,69,19);
-                cursor: pointer;
-            }
-
-            p:hover {
-                color: rgb(139,69,19);
-                font-size: 18px;
-                font-weight: 700;
-                text-shadow:5px 5px 10px rgb(139,69,19);
-            }
-        }
+    p {
+        margin: 0;
+        font-family: 'Nova Round';
+        font-size: 25px;
+        font-weight: 900;
+        color: black;
     }
 `
 export default TopBar

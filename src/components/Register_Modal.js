@@ -9,6 +9,8 @@ import { Firebaes } from "../index"
 
 const Register_Modal = () => {
 
+    const [form] = Form.useForm()
+
     const [modalisOpen, setModalisOpen] = useState(false)
 
     const [email, setEmail] = useState("")
@@ -32,11 +34,17 @@ const Register_Modal = () => {
     const onSubmit = () => {
         Firebaes.createUserWithEmailAndPassword(email , password).then( (response) => {
             console.log(response)
+            message.success("Submit Successful")
         }).catch((err) => {
             console.log(err)
-            message.error("Submit Unsuccessful !!")
+            message.error("Submit Unsuccessful")
         })
     }
+
+    const onReset = () => {
+        form.resetFields()
+      }
+    
 
     ReactModal.setAppElement("#root")
 
@@ -130,7 +138,7 @@ const Register_Modal = () => {
                                     </Form.Item>
                                     <Form.Item>
                                         <div className="button-cancel">
-                                            <Button type="primary" htmlType="reset" className="register-form-button">
+                                            <Button type="primary" htmlType="button" onClick={onReset}>
                                                 <p>Cancel</p>
                                             </Button>
                                         </div>
