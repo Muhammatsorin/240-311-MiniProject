@@ -23,7 +23,7 @@ const LoginPage = () => {
                 </p>
                 <div className="button-link-home">
                     <SignIn_Modal />
-                    <p>|</p>
+                    <p className="between">|</p>
                     <Register_Modal />
                 </div>
             </div>
@@ -83,6 +83,10 @@ const StyledWrpper = styled.div`
             font-family: 'Fredoka One';
             font-size: 30px;
             font-weight: 900;
+            
+            .between {
+                color: black;
+            }
         }
     }
 `

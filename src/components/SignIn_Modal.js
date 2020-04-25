@@ -2,16 +2,25 @@ import React, { useState } from "react"
 import 'antd/dist/antd.css'
 import styled from "styled-components"
 import ReactModal from "react-modal"
-import { Form, Input, Button, Checkbox, Divider } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
+import { Form, Input, Button, Checkbox, Divider , message } from 'antd';
+import { LockOutlined , MailOutlined } from '@ant-design/icons';
+import { Firebaes } from "../index"
 
 const SignIn_Modal = () => {
 
     const [modalisOpen, setModalisOpen] = useState(false)
 
-    const onFinish = values => {
-        console.log('Received values of form: ', values);
+    const [email , setEmail] = useState("")
+    const [password , setPassword] = useState("")
+
+    const onLogin = () => {
+        Firebaes.signInWithEmailAndPassword(email , password).then( (response) => {
+            console.log(response)
+            
+        }).catch( (err) => {
+            console.log(err)
+            message.error("Login Faild !! Please check your information again")
+        })
     }
 
     ReactModal.setAppElement("#root")
@@ -58,13 +67,16 @@ const SignIn_Modal = () => {
                             name="normal_login"
                             className="login-form"
                             initialValues={{ remember: true }}
-                            onFinish={onFinish}
                         >
                             <Form.Item
                                 name="username"
-                                rules={[{ required: true, message: 'Please input your Username!' }]}
+                                rules={[{ required: true, message: 'Please input your Email' }]}
                             >
-                                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                                <Input 
+                                    prefix={<MailOutlined className="site-form-item-icon" />} 
+                                    placeholder="Email"
+                                    onChange={ e => setEmail(e.target.value) } 
+                                />
                             </Form.Item>
                             <Form.Item
                                 name="password"
@@ -74,6 +86,7 @@ const SignIn_Modal = () => {
                                     prefix={<LockOutlined className="site-form-item-icon" />}
                                     type="password"
                                     placeholder="Password"
+                                    onChange={ e => setPassword(e.target.value) }
                                 />
                             </Form.Item>
                             <Form.Item>
@@ -87,7 +100,7 @@ const SignIn_Modal = () => {
                             </Form.Item>
                             <Form.Item>
                                 <Button type="primary" htmlType="submit" className="login-form-button">
-                                    <p>Log in</p>
+                                    <p onClick={onLogin}>Log in</p>
                                 </Button>
                             </Form.Item>
                         </Form>

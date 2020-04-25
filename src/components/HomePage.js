@@ -1,14 +1,21 @@
 import React from 'react'
 import 'antd/dist/antd.css'
 import styled from 'styled-components'
-import MainLayout from "../components/Layout/MainLayout"
+import Topbar from "./TopBar"
+import Footer from "./Footer"
 
 const HomePage = () => {
     return (
-        <MainLayout>
-            
-        </MainLayout>
+        <StyledWrapper>
+            <Topbar />
+            <Footer />
+        </StyledWrapper>
     )
 }
+
+const StyledWrapper = styled.div`
+    margin: 0;
+    height: 100%;
+`
 
 export default HomePage
