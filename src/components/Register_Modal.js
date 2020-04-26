@@ -5,7 +5,7 @@ import styled from "styled-components"
 import ReactModal from "react-modal"
 import { Input, Button, Divider, Form, Checkbox , message } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
-import { Firebaes } from "../index"
+import { Firebaes } from "../components/Firebase/FirebaseAuth"
 
 const Register_Modal = () => {
 

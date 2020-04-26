@@ -3,16 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom'
 import firebase from 'firebase/app'
-import 'firebase/auth'
-import FirebaseConfig from './components/FirebaseConfig'
-
+import config from "./components/Firebase/FirebaseConfig"
+import 'firebase/firestore'
 
 if (firebase.apps.length === 0) {
-  firebase.initializeApp(FirebaseConfig)
+  firebase.initializeApp(config)
 }
-export const Firebaes = firebase.auth()
+
+export const firestore = firebase.firestore()
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

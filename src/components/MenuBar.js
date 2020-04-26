@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Popover, Divider } from 'antd'
 import { Link } from "react-router-dom"
-import { Firebaes } from "../index"
+import { Firebaes } from "../components/Firebase/FirebaseAuth"
 import { useEffect, useState } from 'react'
 
 const MenuBar = () => {

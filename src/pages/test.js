@@ -1,19 +1,44 @@
 import React, { useState, useEffect } from 'react';
+import MainLayout from "../components/Layout/MainLayout"
+import { firestore } from "../index"
 
-function Example() {
-  const [count, setCount] = useState(0);
+const Example = () => {
+
+  const [user, setUser] = useState([])
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
+    retriveData()
+  }, [])
+
+  const retriveData = () => {
+    firestore.collection("location").onSnapshot((snapshot) => {
+      console.log(snapshot.docs)
+      const result = snapshot.docs.map(d => {
+        console.log("d :", d.data())
+        const { id , name } = d.data()
+        return {id , name}
+      })
+      setUser(result)
+    })
+  }
+
+  const renderData = () => {
+    if (user && user.length) {
+      return user.map( (user , index) => {
+        return(
+        <div key={index}>
+          {user.id} : {user.name}
+        </div>
+        )
+      })
+    }
+  }
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <h1>55555</h1>
+      <div>{renderData()}</div>
     </div>
-  );
+  )
 }
 export default Example

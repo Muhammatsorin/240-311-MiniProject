@@ -3,7 +3,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 import Home from "./pages/็็็home"
 import Login from "./pages/login"
 import Example from "./pages/test"
-import { Firebaes } from "./index"
+import { Firebaes } from "./components/Firebase/FirebaseAuth"
 
 const App = () => {
 
@@ -28,6 +28,7 @@ const App = () => {
         <BrowserRouter>
           <div>
             <Route exact path="/" component={Home} />
+            <Route exact path="/test" component={Example} />
           </div>
         </BrowserRouter>
       )

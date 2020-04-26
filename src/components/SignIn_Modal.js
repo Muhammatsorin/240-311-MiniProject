@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ReactModal from "react-modal"
 import { Form, Input, Button, Checkbox, Divider , message } from 'antd';
 import { LockOutlined , MailOutlined } from '@ant-design/icons';
-import { Firebaes } from "../index"
+import { Firebaes } from "../components/Firebase/FirebaseAuth"
 
 const SignIn_Modal = () => {
 
