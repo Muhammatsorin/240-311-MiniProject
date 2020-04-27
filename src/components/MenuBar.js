@@ -137,6 +137,9 @@ const MenuBar = () => {
             <div className="menu-content">
                 <div className="menu-list">
                     <div>
+                        <p>Travels</p>
+                    </div>
+                    <div>
                         <Popover placement="bottom" content={handleDestination}>
                             <p>Destination</p>
                         </Popover>
@@ -194,7 +197,7 @@ const StyledWrapper = styled.div`
         .menu-list {
             display: flex;
             justify-content: space-between;
-            width: 250px;
+            width: 400px;
             margin-right: 20px;
 
             p {

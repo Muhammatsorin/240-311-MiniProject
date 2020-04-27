@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import MainLayout from "../components/Layout/MainLayout"
 import { firestore } from "../index"
+import styled from 'styled-components'
 
 const Example = () => {
 
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState()
 
   useEffect(() => {
     retriveData()
@@ -12,25 +12,26 @@ const Example = () => {
 
   const retriveData = () => {
     firestore.collection("location").onSnapshot((snapshot) => {
-      console.log(snapshot.docs)
       const result = snapshot.docs.map(d => {
-        console.log("d :", d.data())
-        const { id , name } = d.data()
-        return {id , name}
+        const { id , name , subDistric} = d.data()
+        return {id , name , subDistric}
       })
       setUser(result)
     })
   }
 
   const renderData = () => {
+    console.log(user)
     if (user && user.length) {
-      return user.map( (user , index) => {
-        return(
-        <div key={index}>
-          {user.id} : {user.name}
-        </div>
-        )
-      })
+      return(
+        <Styledwrapper>
+          <div>
+            <p>LOCATION 1 : {user[0].id} : {user[0].name} : {user[0].subDistric}</p>
+          </div>
+          <br />
+          <p>LOCATION 2 : {user[1].id} : {user[1].name} : {user[1].subDistric}</p>
+        </Styledwrapper>
+      )
     }
   }
 
@@ -41,4 +42,8 @@ const Example = () => {
     </div>
   )
 }
+
+const Styledwrapper = styled.div`
+  margin: 0
+`
 export default Example
