@@ -45,83 +45,16 @@ const MenuBar = () => {
         </PopoverStyled>
     )
 
-    const handleDestination = (
-        <PopoverStyled>
-            <div className="destination-popover-list">
-                <div className="mueang-pattani">
-                    <Link>
-                        <p>Mueang Pattani</p>
-                    </Link>
-                </div>
-                <div className="khok-pho">
-                    <Link>
-                        <p>Khok Pho</p>
-                    </Link>
-                </div>
-                <div className="nong-chik">
-                    <Link>
-                        <p>Nong Chik</p>
-                    </Link>
-                </div>
-                <div className="panare">
-                    <Link>
-                        <p>Panare</p>
-                    </Link>
-                </div>
-                <div className="mayo">
-                    <Link>
-                        <p>Mayo</p>
-                    </Link>
-                </div>
-                <div className="thung-yang-daeng">
-                    <Link>
-                        <p>Thung Yang Daeng</p>
-                    </Link>
-                </div>
-                <div className="sai-buri">
-                    <Link>
-                        <p>Sai Buri</p>
-                    </Link>
-                </div>
-                <div className="mai-kaen">
-                    <Link>
-                        <p>Mai Kaen</p>
-                    </Link>
-                </div>
-                <div className="yaring">
-                    <Link>
-                        <p>Yaring</p>
-                    </Link>
-                </div>
-                <div className="yarang">
-                    <Link>
-                        <p>Yarang</p>
-                    </Link>
-                </div>
-                <div className="kapho">
-                    <Link>
-                        <p>Kapho</p>
-                    </Link>
-                </div>
-                <div className="mae-lan">
-                    <Link>
-                        <p>Mae Lan</p>
-                    </Link>
-                </div>
-            </div>
-        </PopoverStyled>
-    )
-
     const handleReview = (
         <PopoverStyled>
             <div className="review-popover-list">
                 <div className="user-review">
-                    <Link>
+                    <Link to="/review">
                         <p>Review</p>
                     </Link>
                 </div>
                 <div className="review-all">
-                    <Link>
+                    <Link to="/review-all">
                         <p>All Review</p>
                     </Link>
                 </div>
@@ -132,17 +65,16 @@ const MenuBar = () => {
     return (
         <StyledWrapper>
             <div className="text">
-                <p onClick={handleClick}>PaiHaiSud</p>
+                <Link to="/">
+                    <p onClick={handleClick}>PaiHaiSud</p>
+                </Link>
             </div>
             <div className="menu-content">
                 <div className="menu-list">
                     <div>
-                        <p>Travels</p>
-                    </div>
-                    <div>
-                        <Popover placement="bottom" content={handleDestination}>
-                            <p>Destination</p>
-                        </Popover>
+                        <Link to="travel-all">
+                            <p>Travels</p>
+                        </Link>
                     </div>
                     <div>
                         <Popover placement="bottom" content={handleReview}>
@@ -197,8 +129,8 @@ const StyledWrapper = styled.div`
         .menu-list {
             display: flex;
             justify-content: space-between;
-            width: 400px;
-            margin-right: 20px;
+            width: 200px;
+            margin-right: 40px;
 
             p {
                 font-family: 'Inknut Antiqua';
@@ -255,237 +187,6 @@ const PopoverStyled = styled.div`
             width: 10vw;
             text-align: center;
             
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-    }
-
-    .destination-popover-list {
-
-        .mueang-pattani {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .khok-pho {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .nong-chik {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .panare {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .mayo {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .thung-yang-daeng {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .sai-buri {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .mai-kaen {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .yaring {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .yarang {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .kapho {
-            width: 15vw;
-            text-align: center;
-
-            p {
-                font-family: 'Inknut Antiqua';
-                font-size: 15px;
-                font-weight: 500;
-                color: rgb(0,191,255)
-            }
-
-            p:hover {
-                color: rgb(255,69,0);
-                font-size: 18px;
-                font-weight: 700;
-                background: #EBFEFF;
-            }
-        }
-
-        .mae-lan {
-            width: 15vw;
-            text-align: center;
-
             p {
                 font-family: 'Inknut Antiqua';
                 font-size: 15px;

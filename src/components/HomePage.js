@@ -10,12 +10,6 @@ const HomePage = () => {
         <MainLayout>
             <StyledWrapper>
                 <div className="main-content">
-                    <Divider
-                        style={{
-                            height: "5px",
-                            margin: 0
-                        }}
-                    />
                     <div className="main-title">
                         <div className="main-title-img">
                             <img src="http://www.paaktai.com/admin/../files/com_longtai/2019-07_35f7b3326cd2420.JPG" title="Thank you for the picture from ล่องใต้ชายแดน"

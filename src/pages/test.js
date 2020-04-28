@@ -11,10 +11,10 @@ const Example = () => {
   }, [])
 
   const retriveData = () => {
-    firestore.collection("location").onSnapshot((snapshot) => {
+    firestore.collection("review").onSnapshot((snapshot) => {
       const result = snapshot.docs.map(d => {
-        const { id , name , subDistric} = d.data()
-        return {id , name , subDistric}
+        const { id, email , location , description , satisfaction } = d.data()
+        return { id, email , location , description , satisfaction }
       })
       setUser(result)
     })
@@ -26,10 +26,8 @@ const Example = () => {
       return(
         <Styledwrapper>
           <div>
-            <p>LOCATION 1 : {user[0].id} : {user[0].name} : {user[0].subDistric}</p>
+            <p>LOCATION 1 : {user[0].email} : {user[0].location} : {user[0].description}</p>
           </div>
-          <br />
-          <p>LOCATION 2 : {user[1].id} : {user[1].name} : {user[1].subDistric}</p>
         </Styledwrapper>
       )
     }
