@@ -41,7 +41,6 @@ const App = () => {
             <Route path="/sai_khao" component={Sai_khao} />
             <Route path="/kruesae_mosque" component={Kruesae_Mosque} />
             <Route path="/lim_ko_niao" component={Lim_ko_niao} />
-            
             <Route path="/travel-all" component={Travel} />
             <Route path="/test" component={Example} />
           </div>

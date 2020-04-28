@@ -173,7 +173,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/lim_ko_niao">
                                             <h2>ศาลเจ้าแม่ลิ้มกอเหนี่ยว</h2>
                                         </Link>
                                     </div>
