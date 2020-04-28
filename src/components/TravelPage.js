@@ -214,7 +214,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/talo_capo_beach">
                                             <h2>หาดตะโละกาโปร์</h2>
                                         </Link>
                                     </div>
@@ -255,7 +255,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/sky_walk">
                                             <h2>Sky Walk</h2>
                                         </Link>
                                     </div>
@@ -296,7 +296,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/panare_beach">
                                             <h2>หาดปะนาเระ</h2>
                                         </Link>
                                     </div>
@@ -337,7 +337,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/yarang_ancient">
                                             <h2>เมืองโบราณยะรัง</h2>
                                         </Link>
                                     </div>
@@ -378,7 +378,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/chang_hai_temple">
                                             <h2>วัดราษฎร์บูรณะ (วัดช้างให้)</h2>
                                         </Link>
                                     </div>
@@ -460,7 +460,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/somdet_phra_srinagarindra_park">
                                             <h2>สวนสมเด็จพระศรีนครินทร์ ปัตตานี</h2>
                                         </Link>
                                     </div>
@@ -501,7 +501,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/wasukri_beach">
                                             <h2>หาดวาสุกรี</h2>
                                         </Link>
                                     </div>
@@ -542,7 +542,7 @@ const Travel_Page = () => {
                                 />
                                 <div className="content">
                                     <div className="title-content">
-                                        <Link to="">
+                                        <Link to="/leam_tachie">
                                             <h2>ปลายสุดแหลมตาชี</h2>
                                         </Link>
                                     </div>

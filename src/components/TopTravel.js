@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { firestore } from "../index"
 import 'antd/dist/antd.css'
 import { Divider, Button } from 'antd'
+import { Link } from "react-router-dom"
 
 const TopTravel = () => {
 
@@ -15,8 +16,8 @@ const TopTravel = () => {
     const retriveData = () => {
         firestore.collection("location").onSnapshot((response) => {
             const result = response.docs.map(d => {
-                const { id , name , subDistric , distric , province , postalCode } = d.data()
-                return { id , name , subDistric , distric , province , postalCode }
+                const { id, name, subDistric, distric, province, postalCode } = d.data()
+                return { id, name, subDistric, distric, province, postalCode }
             })
             setLocation(result)
         })
@@ -39,14 +40,16 @@ const TopTravel = () => {
                                 }}
                             />
                             <div className="text-left">
-                                <h3>มัสยิดกลางปัตตานี</h3>
+                                <Link to="/pattani_central_mosque">
+                                    <h3>มัสยิดกลางปัตตานี</h3>
+                                </Link>
                                 <div className="location-content">
                                     <p>ตำแหน่งที่ตั้ง</p>
-                                    <img src="https://image.flaticon.com/icons/png/128/684/684908.png" 
+                                    <img src="https://image.flaticon.com/icons/png/128/684/684908.png"
                                         style={{
-                                            width: "15px" ,
-                                            height: "15px" ,
-                                            marginTop: "10px" ,
+                                            width: "15px",
+                                            height: "15px",
+                                            marginTop: "10px",
                                             marginLeft: "10px"
                                         }}
                                     />
@@ -72,7 +75,9 @@ const TopTravel = () => {
                                     }}
                                 />
                                 <div>
-                                    <h3>สกาย วอล์ก</h3>
+                                    <Link to="/sky_walk">
+                                        <h3>สกาย วอล์ก</h3>
+                                    </Link>
                                     <p>Pattani Adventure Park ( ทางเดินชมธรรมชาติ )</p>
                                 </div>
                             </div>
@@ -84,7 +89,9 @@ const TopTravel = () => {
                                     }}
                                 />
                                 <div>
-                                    <h3>อุทยานแห่งชาติน้ำตกทรายขาว</h3>
+                                    <Link to="/sai_khao">
+                                        <h3>อุทยานแห่งชาติน้ำตกทรายขาว</h3>
+                                    </Link>
                                     <p>ป่าต้นน้ำของ 3 จังหวัดชายแดนภาคใต้</p>
                                 </div>
                             </div>
@@ -92,9 +99,11 @@ const TopTravel = () => {
                     </div>
                     <div className="see-all">
                         <div className="text">
-                            <Button>
-                                <p>See All</p>
-                            </Button>
+                            <Link to="/travel-all">
+                                <Button>
+                                    <p>See All</p>
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </StyledWrapper>

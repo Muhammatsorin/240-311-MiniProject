@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import MainLayout from "../Layout/MainLayout"
 import "antd/dist/antd.css"
 import styled from "styled-components"
-import { Input, Select, Button, Divider, Radio  , message} from 'antd'
+import { Input, Select, Button, Divider, Radio, message } from 'antd'
 import { firestore } from "../../index"
 
 const ReviewPage = () => {
@@ -13,6 +13,7 @@ const ReviewPage = () => {
     const [location, setLocation] = useState("")
     const [description, setDescription] = useState("")
     const [satisfaction, setsatisfaction] = useState("")
+    const [imgUrl, setImgUrl] = useState("")
 
     const [review, setReview] = useState()
 
@@ -23,8 +24,8 @@ const ReviewPage = () => {
     const retriveData = () => {
         firestore.collection("review").onSnapshot((response) => {
             const result = response.docs.map(d => {
-                const { id, email, location, description, satisfaction } = d.data()
-                return { id, email, location, description, satisfaction }
+                const { id, email, location, description, satisfaction, imgUrl } = d.data()
+                return { id, email, location, description, satisfaction, imgUrl }
             })
             console.log(result)
             setReview(result)
@@ -32,20 +33,20 @@ const ReviewPage = () => {
     }
 
     const createReview = () => {
-        const id = (review.length === 0) ? 1 : review[review.length-1].id + 1
-        firestore.collection("review").doc(id+"").set( { id, email, location, description, satisfaction } )
+        const id = (review.length === 0) ? 1 : review[review.length - 1].id + 1
+        firestore.collection("review").doc(id + "").set({ id, email, location, description, satisfaction, imgUrl })
         message.success("Review completed")
     }
 
     const onSelect = (value) => {
         setLocation(value)
     }
- 
+
     const onSelectFocus = (e) => {
         setsatisfaction(e.target.value)
     }
 
-    const renderReviewPage = () => { 
+    const renderReviewPage = () => {
         return (
             <MainLayout>
                 <StyledWrapper>
@@ -232,6 +233,16 @@ const ReviewPage = () => {
                                     </Radio.Group>
                                 </div>
                             </div>
+                            <div className="input-img-url">
+                                <p>Image URL :</p>
+                                <Input
+                                    style={{
+                                        width: "400px",
+                                        marginLeft: "20px"
+                                    }}
+                                    onChange={e => setImgUrl(e.target.value)}
+                                />
+                            </div>
                         </div>
                     </div>
                     <Divider />
@@ -262,7 +273,7 @@ const StyledWrapper = styled.div`
         margin-top: 20px;
 
         h1 {
-            font-family: 'Inknut Antiqua';
+            font-family: 'Mitr';
             font-size: 40px;
             font-weight: 900;
             color: rgb(30,144,255);
@@ -337,6 +348,18 @@ const StyledWrapper = styled.div`
                         }
                     }
 
+                }
+            }
+
+            .input-img-url {
+                display: flex;
+                margin-top: 30px;
+                align-items: center;
+
+                p {
+                    margin: 6px 0px 0px 0px;
+                    width: 100px;
+                    font-family: 'Mitr';
                 }
             }
         }
